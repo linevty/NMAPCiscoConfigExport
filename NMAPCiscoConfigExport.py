@@ -46,7 +46,6 @@ with open("INPUT-nmap-devices.txt") as file:
 
 print ('\n\n^^^^^^^^^^\nAttempting SSH Access to each device in device list\n')
 
-#loop all ip addresses in ip_list
 for ip in ip_list:
     cisco = {
     'device_type':'cisco_ios',
@@ -57,9 +56,7 @@ for ip in ip_list:
     'ssh_strict':False,  
     'fast_cli':False,
     }
-    
-    #handling exceptions errors
-    
+ 
     try:
         net_connect = ConnectHandler(**cisco)
         print(ip + " Connected")
